@@ -1,0 +1,8 @@
+new_tab @@session@@ - nvim
+cd @@session-path@@
+launch --title "@@session@@ - nvim" nvim .
+
+new_tab @@session@@ - zsh
+cd @@session-path@@
+launch zsh
+focus_tab 0
