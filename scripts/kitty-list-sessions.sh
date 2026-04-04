@@ -77,10 +77,10 @@ if [[ ! -f "$session_file" ]]; then
     name=$(basename "$session_file" .kitty-session)
     # Find the repo path for template substitution
     repo_path=""
-    for entry in "${TS_SEARCH_PATHS[@]}"; do
+    for entry in "${KS_SEARCH_PATHS[@]}"; do
         path="${entry%%:*}"
         depth="${entry##*:}"
-        [[ "$path" == "$entry" ]] && depth="${TS_MAX_DEPTH:-1}"
+        [[ "$path" == "$entry" ]] && depth="${KS_MAX_DEPTH:-1}"
         [[ -d "$path" ]] || continue
         while IFS= read -r repo; do
             [[ "$(basename "$repo")" == "$name" ]] && { repo_path="$repo"; break; }
